@@ -1,0 +1,4 @@
+function mm:dialogue/clear_chat
+tag @s add First_Deposit
+execute as @a run tellraw @s [{"text":"Hey there, little guy! Won't you deposit some "},{"text":"Rupees","color":"#FCC0CB"},{"text":"?\nNowadays, even if people have money, they don't deposit any.\nNothing! Nothing!!\n"},{"text":"So, for a limited time, I'll give you a special gift based on how\nmuch you deposit. For example, if you deposit "},{"text":"200 Rupees","color":"#FCC0CB"},{"text":",\nyou'll get an item that holds a lot of "},{"text":"Rupees","color":"#FCC0CB"},{"text":".\n\n"},{"text":"Next","color":"blue","clickEvent":{"action":"run_command","value":"/function mm:shops/bank/zero_balance_choice"}}]
+function mm:dialogue/display_leave

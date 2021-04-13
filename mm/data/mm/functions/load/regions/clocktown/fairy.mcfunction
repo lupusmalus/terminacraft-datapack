@@ -1,0 +1,3 @@
+kill @e[tag=qFairyCT]
+execute in termina if score #Global Ticks matches ..11999 run summon armor_stand -695 51 -304 {NoGravity:1b,Small:1b,Marker:1b,Invisible:1b,Tags:["qFairyCT"],Rotation:[90F,0F],HandItems:[{id:"minecraft:torch",Count:1b},{}],ArmorItems:[{},{},{},{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:9000000}}]}
+execute in termina if score #Global Ticks matches 12000.. run summon armor_stand -765 63 -281 {NoGravity:1b,Small:1b,Marker:1b,Invisible:1b,Tags:["qFairyCT"],HandItems:[{id:"minecraft:torch",Count:1b},{}],ArmorItems:[{},{},{},{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:9000000}}]}

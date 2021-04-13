@@ -1,0 +1,1 @@
+execute if entity @s[team=!Leader] run tellraw @s [{"text":"Only the Team Leader can decide!\n","color":"red"},{"text":"Current Leader: ","color":"gray"},{"selector":"@a[team=Leader]"}]

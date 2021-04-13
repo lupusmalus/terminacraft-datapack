@@ -1,0 +1,3 @@
+scoreboard players remove #Global Bank_Slot3 1
+scoreboard players operation #Global Bank_Slot3 %= #VAR_CONST TEN
+function mm:shops/bank/deposit/enter_slots

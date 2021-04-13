@@ -1,0 +1,1 @@
+summon slime ~ ~ ~ {CustomNameVisible:0b,Health:8f,Size:1,Tags:["unsplittable:1b"],CustomName:'{"text":"Chu Chu","italic":false}'}

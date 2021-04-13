@@ -1,0 +1,1 @@
+execute unless entity @e[type=armor_stand, nbt={Tags:["tatl:1b"]}] at @a[team=Leader] run summon armor_stand ~ ~0.5 ~ {NoGravity:1b,NoBasePlate:1b,Invisible:1b,Marker:1b,Small:1b,Tags:["tatl:1b"],ArmorItems:[{},{},{},{id:"minecraft:chorus_flower",Count:1b}],HandItems:[{id:"minecraft:torch",Count:1b},{}]}

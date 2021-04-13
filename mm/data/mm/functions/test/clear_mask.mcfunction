@@ -1,0 +1,1 @@
+execute as @a store result score @s Item_Cleared run clear @s carrot_on_a_stick{CustomModelData:9000017} 0
