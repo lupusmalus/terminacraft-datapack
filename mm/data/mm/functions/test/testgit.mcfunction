@@ -1,1 +1,1 @@
-say now it works
+say pushing to remote was easy

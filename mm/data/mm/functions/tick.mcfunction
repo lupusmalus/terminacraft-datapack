@@ -26,6 +26,8 @@ execute unless score #Boolean No_Players matches 1.. in minecraft:termina if sco
 execute unless score #Boolean No_Players matches 1.. run function mm:update/updateregions
 #execute unless score #Boolean No_Players matches 1.. run function mm:update/clock
 
+
+
 # general mechanics
 function mm:items/drops/drops
 
@@ -49,3 +51,5 @@ function mm:tatl/update_tatl
 
 
 function mm:mobs/stray_fairy/move
+
+execute as @e[type=minecraft:villager, nbt={HurtTime:10s}] run function mm:npc/bomber/hit

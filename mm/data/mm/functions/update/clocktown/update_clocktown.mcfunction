@@ -82,3 +82,4 @@ execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..
 #tp to fairyfounatin
 
 execute in termina positioned -720 62 -241 if entity @a[team=Leader, distance=..2] run tp @a[tag=!debug] -435 17 -112 0 0
+execute in termina run function mm:update/clocktown/balloons

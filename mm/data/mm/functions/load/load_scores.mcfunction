@@ -6,13 +6,20 @@ scoreboard objectives add HOURS dummy
 scoreboard objectives add A_C_HOUR_PULSE dummy
 scoreboard objectives add A_C_MIN_PULSE dummy
 scoreboard objectives add TEN dummy
+scoreboard objectives add TPS dummy
+scoreboard objectives add SIXTY dummy
+
+
 
 
 scoreboard players set #TIME_CONST A_C_MIN_PULSE 50
 scoreboard players set #TIME_CONST A_C_HOUR_PULSE 1000
 scoreboard players set #TIME_CONST MINUTES 17
 scoreboard players set #TIME_CONST HOURS 24
+scoreboard players set #TIME_CONST TPS 20
+scoreboard players set #TIME_CONST SIXTY 60
 scoreboard players set #VAR_CONST TEN 10
+
 
 
 #TODO: repartition into subfiles
@@ -130,11 +137,12 @@ scoreboard players set #VAR_CONST TEN 10
     #TODO CLEAN UP
     scoreboard objectives add Item_Cleared dummy
 
+    scoreboard objectives add Animate dummy
 
     #DEPRECATED
     scoreboard objectives add Item_Slot dummy
 
     scoreboard players reset @a Item_Cleared
 
-
+    scoreboard objectives add PACE_seconds dummy
     function mm:lock/init
