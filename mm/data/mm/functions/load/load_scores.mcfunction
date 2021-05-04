@@ -9,8 +9,9 @@ scoreboard objectives add TEN dummy
 scoreboard objectives add TPS dummy
 scoreboard objectives add SIXTY dummy
 
-
-
+#TODO: add entire function for npcs
+scoreboard objectives add CTGuard dummy
+scoreboard players set #Guard CTGuard 0
 
 scoreboard players set #TIME_CONST A_C_MIN_PULSE 50
 scoreboard players set #TIME_CONST A_C_HOUR_PULSE 1000

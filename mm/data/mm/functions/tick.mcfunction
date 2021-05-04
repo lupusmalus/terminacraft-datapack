@@ -53,3 +53,4 @@ function mm:tatl/update_tatl
 function mm:mobs/stray_fairy/move
 
 execute as @e[type=minecraft:villager, nbt={HurtTime:10s}] run function mm:npc/bomber/hit
+#execute as @e[type=villager, tag=!marked] run tag @s add marked

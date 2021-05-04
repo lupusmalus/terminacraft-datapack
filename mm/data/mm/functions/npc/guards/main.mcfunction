@@ -1,0 +1,1 @@
+execute as @e[scores={CTGuard=0..}] at @s if entity @p[distance=..2] run say yo
