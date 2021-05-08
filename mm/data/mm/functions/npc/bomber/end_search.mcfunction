@@ -13,4 +13,8 @@ npc despawn
 npc select 61
 npc despawn
 
-kill @e[tag=bomberChicken]
+npc select 68
+npc despawn
+
+npc select 69
+npc spawn

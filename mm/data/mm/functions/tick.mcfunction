@@ -51,6 +51,13 @@ function mm:tatl/update_tatl
 
 
 function mm:mobs/stray_fairy/move
+function mm:animate/float_big
+function mm:animate/float_mid
 
+execute as @e[type=minecraft:villager, tag=!marked] run tag @s add marked
+execute if entity @e[type=minecraft:villager, nbt={HurtTime:10s}] at @e[type=minecraft:villager, nbt={HurtTime:10s}] run playsound mm.mobs.bomber.caught master @a ~ ~ ~ 1 1
 execute as @e[type=minecraft:villager, nbt={HurtTime:10s}] run function mm:npc/bomber/hit
-#execute as @e[type=villager, tag=!marked] run tag @s add marked
+function mm:npc/guards/main
+
+
+function mm:npc/skullkid/ct_deku

@@ -23,16 +23,16 @@ execute if score Hours Ticks matches 993.. run scoreboard players set Minutes Cl
 
 
 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11500 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11600 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11700 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11800 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11900 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11500 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11600 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11700 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11800 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11900 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
 execute if score #Global Ticks matches 12000 run function mm:time/newnight
 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23500 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23600 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23700 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23800 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
-execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23900 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23500 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23600 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23700 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23800 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
+execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23900 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
 execute if score #Global Ticks matches 24000 run function mm:time/newday

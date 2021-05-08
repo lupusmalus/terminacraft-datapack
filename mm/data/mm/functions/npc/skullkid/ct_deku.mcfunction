@@ -1,0 +1,2 @@
+execute as @e[scores={SkullKidDeku=0..}] at @s if entity @e[tag=deku_bubble, distance=..1.2] run scoreboard players set @e[tag=deku_bubble, limit=1, sort=nearest] Raycasting 10000
+execute as @e[scores={SkullKidDeku=0..}] at @s if entity @e[tag=deku_bubble, distance=..1.2] run function mm:npc/skullkid/drop_ocarina

@@ -10,8 +10,18 @@ scoreboard objectives add TPS dummy
 scoreboard objectives add SIXTY dummy
 
 #TODO: add entire function for npcs
-scoreboard objectives add CTGuard dummy
-scoreboard players set #Guard CTGuard 0
+scoreboard objectives add CTGuardS dummy
+scoreboard objectives add CTGuardE dummy
+scoreboard objectives add CTGuardN dummy
+scoreboard objectives add CTGuardW dummy
+
+scoreboard players set #SouthGuard CTGuardS 0
+scoreboard players set #NorthGuard CTGuardN 0
+scoreboard players set #EastGuard CTGuardE 0
+scoreboard players set #WestGuard CTGuardW 0
+
+scoreboard objectives add Bomber_Balloon dummy
+
 
 scoreboard players set #TIME_CONST A_C_MIN_PULSE 50
 scoreboard players set #TIME_CONST A_C_HOUR_PULSE 1000
@@ -48,7 +58,27 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard players set #Global Bank_Slot2 0
     scoreboard players set #Global Bank_Slot3 0
 
-    
+
+    #BOMBER
+    scoreboard objectives add Bomber_Slot1 dummy
+    scoreboard objectives add Bomber_Slot2 dummy
+    scoreboard objectives add Bomber_Slot3 dummy
+    scoreboard objectives add Bomber_Slot4 dummy
+    scoreboard objectives add Bomber_Slot5 dummy
+
+    scoreboard objectives add Bomber_Code1 dummy
+    scoreboard objectives add Bomber_Code2 dummy
+    scoreboard objectives add Bomber_Code3 dummy
+    scoreboard objectives add Bomber_Code4 dummy
+    scoreboard objectives add Bomber_Code5 dummy
+
+
+    #TODO: unhardcode this: make random for every game
+    scoreboard players set #Global Bomber_Code1 4
+    scoreboard players set #Global Bomber_Code2 1
+    scoreboard players set #Global Bomber_Code3 2
+    scoreboard players set #Global Bomber_Code4 5
+    scoreboard players set #Global Bomber_Code5 3
 
 
     scoreboard players set Hours Clock 0
@@ -91,6 +121,7 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add Pick_Magic picked_up:experience_bottle
     scoreboard objectives add Pick_Stick picked_up:stick
     scoreboard objectives add Pick_Nut picked_up:coal
+    scoreboard objectives add Pick_Ocarina picked_up:cocoa_beans
 
     scoreboard objectives add Arrows dummy
     scoreboard objectives add Deku_Sticks dummy
@@ -115,6 +146,12 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add Mu_Fairy dummy
 
 
+    #HEARTS
+    scoreboard objectives add Hearts dummy
+    scoreboard objectives add HeartPieces dummy
+
+    #TODO: REMOVE THIS IN THE FUTURE
+    scoreboard players set #Global Hearts 3
 
 
     #MASKS
@@ -146,4 +183,12 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard players reset @a Item_Cleared
 
     scoreboard objectives add PACE_seconds dummy
+    
+    scoreboard objectives add SkullKidDeku dummy
+    scoreboard players set #SkullKidDeku SkullKidDeku 1
+    
     function mm:lock/init
+
+
+
+    

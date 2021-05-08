@@ -1,0 +1,1 @@
+execute as LupusMalus at LupusMalus run playsound minecraft:mm.item.mask_off master LupusMalus ~ ~ ~ 1 1

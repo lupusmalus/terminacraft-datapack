@@ -11,6 +11,8 @@ function mm:items/drops/greenrupees
 function mm:items/drops/bluerupees
 function mm:items/drops/deku_sticks
 function mm:items/drops/deku_nuts
+function mm:items/drops/ocarina
+
 
 
 

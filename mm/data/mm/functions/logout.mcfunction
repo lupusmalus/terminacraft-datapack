@@ -6,4 +6,5 @@ execute at @a[team=Leader] run tp @s ~ ~ ~
 #execute unless entity @a[team=Leader,tag=In_Dialogue] run function mm:dialogue/leave_dialogue
 #execute if entity @a[team=Leader, tag=In_Dialogue] run function mm:lock/lock
 function mm:music/music_reset_self
+function mm:player/set_hearts
 scoreboard players reset @s Offline

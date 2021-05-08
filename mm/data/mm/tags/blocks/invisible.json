@@ -1,0 +1,8 @@
+{
+    "replace": true,
+    "values": [
+        "minecraft:barrier",
+        "minecraft:air",
+
+    ]
+}
