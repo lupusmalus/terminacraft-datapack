@@ -122,6 +122,8 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add Pick_Stick picked_up:stick
     scoreboard objectives add Pick_Nut picked_up:coal
     scoreboard objectives add Pick_Ocarina picked_up:cocoa_beans
+    scoreboard objectives add Pick_HeartPiece picked_up:prismarine_crystals
+
 
     scoreboard objectives add Arrows dummy
     scoreboard objectives add Deku_Sticks dummy
@@ -187,6 +189,21 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add SkullKidDeku dummy
     scoreboard players set #SkullKidDeku SkullKidDeku 1
     
+
+
+    scoreboard objectives add DPPlatform1 dummy
+    scoreboard objectives add DPPlatform2 dummy
+    scoreboard objectives add DPPlatform3 dummy
+    scoreboard objectives add DPPlatform4 dummy
+    scoreboard objectives add DPPlatform5 dummy
+    scoreboard objectives add DPPlatform6 dummy
+
+
+    scoreboard objectives add OnGround dummy
+
+
+
+
     function mm:lock/init
 
 

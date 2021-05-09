@@ -59,5 +59,11 @@ execute if entity @e[type=minecraft:villager, nbt={HurtTime:10s}] at @e[type=min
 execute as @e[type=minecraft:villager, nbt={HurtTime:10s}] run function mm:npc/bomber/hit
 function mm:npc/guards/main
 
-
+#TODO: make these region dependent!!
 function mm:npc/skullkid/ct_deku
+execute in termina run function mm:update/clocktown/deku_playground/day1
+
+
+#TODO: pack into function
+execute as @a[nbt={OnGround:1b}] unless score @s OnGround matches 1.. run scoreboard players set @s OnGround 1 
+execute as @a[nbt={OnGround:0b}] if score @s OnGround matches 1.. run scoreboard players set @s OnGround 0

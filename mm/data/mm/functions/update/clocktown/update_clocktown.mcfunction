@@ -83,3 +83,6 @@ execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..
 
 execute in termina positioned -720 62 -241 if entity @a[team=Leader, distance=..2] run tp @a[tag=!debug] -435 17 -112 0 0
 execute in termina run function mm:update/clocktown/balloons
+
+
+execute in termina positioned -725 53 -249 if entity @a[distance=..2] run tp @a[tag=!debug] -624 18 -103 180 0
