@@ -4,9 +4,6 @@ scoreboard players set Hours Ticks 0
 execute in termina run time set 12000
 execute in overworld run time set 12000
 
-scoreboard players set Hours Clock 18
-scoreboard players set Minutes Clock 0
-scoreboard players set Hours Ticks 0
 scoreboard players set #Ani_Clock_Min Ticks 0
 
 execute as @a run function mm:music/music_reset_self

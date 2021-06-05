@@ -13,14 +13,9 @@ function mm:items/drops/cleardrops
 execute as @a run function mm:music/music_reset_self
 #TODO: reset_time function
 #TODO: pack into big function
-scoreboard players set #Global Ticks 0
 scoreboard players set #Ani_Clock_Min Ticks 0
 scoreboard players set #Ani_Clock_Min Frames 0
 scoreboard players set Days Clock 1
-scoreboard players set Hours Ticks 0
-scoreboard players set Minutes Ticks 0
-scoreboard players set Minutes Clock 0
-scoreboard players set Hours Clock 6
 
 execute in minecraft:termina run time set 0
 execute in minecraft:overworld run time set 0

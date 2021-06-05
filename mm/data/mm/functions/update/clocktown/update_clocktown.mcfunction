@@ -6,6 +6,8 @@
 #TODO: keepinventory for non-ops
 #TODO: kokirisword unbreakable
 
+
+
 # start playing if in region and time is right
 execute in minecraft:termina positioned -739 54 -266 if score Days Clock matches 1 if score #Global Ticks matches 5.. unless score #Global Ticks matches 11995.. run scoreboard players add @a[distance=..72] Mu_Clocktown1 0
 execute in minecraft:termina positioned -739 54 -266 if score Days Clock matches 2 if score #Global Ticks matches 5.. unless score #Global Ticks matches 11995.. run scoreboard players add @a[distance=..72] Mu_Clocktown2 0
@@ -60,7 +62,8 @@ scoreboard players set @a[scores={Mu_Storms=883}] Mu_Storms 0
 
 
 ############################ CLOCK
-execute in minecraft:termina if score #Boolean Time_Runs matches 1.. if score #Ani_Clock_Min Ticks matches 0 run playsound minecraft:mm.time.tick ambient @a -739 61 -277 1 1
+#TODO: fix this
+execute in minecraft:termina if score #Boolean Time_Runs matches 1.. if score #Ani_Clock_Min Ticks matches -1 run playsound minecraft:mm.time.tick ambient @a -739 61 -277 2 1
 execute if score #Ani_Clock_Min Ticks matches 0..5 run function mm:update/clocktown/animate_clocktower
 execute if score Hours Ticks matches 0..5 run function mm:update/clocktown/animate_clocktower_hours
 
@@ -85,4 +88,9 @@ execute in termina positioned -720 62 -241 if entity @a[team=Leader, distance=..
 execute in termina run function mm:update/clocktown/balloons
 
 
+#Deku playground
+execute in termina positioned -725 59 -249 if entity @a[distance=..1] run playsound mm.action.hole master @a ~ ~ ~ 2 1
 execute in termina positioned -725 53 -249 if entity @a[distance=..2] run tp @a[tag=!debug] -624 18 -103 180 0
+
+#Sewers
+execute in termina positioned -788 58 -247 if entity @p[distance=..2] run tp @a[tag=!debug] -833 23 -247

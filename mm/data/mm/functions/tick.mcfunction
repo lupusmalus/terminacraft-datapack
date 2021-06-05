@@ -11,6 +11,8 @@ function mm:assignleader
 # check if anyone is wearing masks
 execute unless entity @a[tag=In_Dialogue] run function mm:player/check_masks
 execute unless entity @a[tag=In_Dialogue] run function mm:player/check_items
+execute unless entity @a[tag=In_Dialogue] run function mm:player/check_abutton
+
 
 
 # check for dekufly and bubble blast
@@ -61,9 +63,65 @@ function mm:npc/guards/main
 
 #TODO: make these region dependent!!
 function mm:npc/skullkid/ct_deku
-execute in termina run function mm:update/clocktown/deku_playground/day1
+
 
 
 #TODO: pack into function
 execute as @a[nbt={OnGround:1b}] unless score @s OnGround matches 1.. run scoreboard players set @s OnGround 1 
 execute as @a[nbt={OnGround:0b}] if score @s OnGround matches 1.. run scoreboard players set @s OnGround 0
+
+
+
+#TODO: pack into separate update function UPDATE_SEWERS
+execute in termina positioned -831 22 -247 if entity @p[distance=..1.5,team=Leader] run tp @a[tag=!debug] -783 57 -247 270 0
+
+
+execute in termina positioned -907 21 -235 if entity @p[distance=..2, team=Leader] run scoreboard players set @a[tag=!debug] Mu_Observatory 0
+execute in termina positioned -907 21 -235 if entity @p[distance=..2, team=Leader] run tp @a[tag=!debug] -913 21 -235
+
+execute in termina positioned -909 21 -235 if entity @p[distance=..2, team=Leader] as @a[tag=!debug] run function mm:music/music_reset_self
+execute in termina positioned -909 21 -235 if entity @p[distance=..2, team=Leader] run tp @a[tag=!debug] -905 21.5 -235
+
+execute as @e[tag=balloon] at @s if entity @e[tag=deku_bubble, distance=..1.2] run scoreboard players set @e[tag=deku_bubble, limit=1, sort=nearest] Raycasting 10000
+execute as @e[tag=balloon, tag=bomber] at @s if entity @e[tag=deku_bubble, distance=..1.2] run scoreboard players set #Global Bomber_Balloon 1
+execute as @e[tag=balloon, tag=sewer] at @s if entity @e[tag=deku_bubble, distance=..1.2] run setblock -895 22 -235 air
+execute as @e[tag=balloon] at @s if entity @e[tag=deku_bubble, distance=..1.2] run kill @s
+
+
+execute in minecraft:termina positioned -922 28 -235 run playsound minecraft:mm.music.observatory record @a[scores={Mu_Observatory=0}] ~ ~ ~ 3 1 1
+scoreboard players add @a[scores={Mu_Observatory=0..}] Mu_Observatory 1
+scoreboard players set @a[scores={Mu_Observatory=1280}] Mu_Observatory 0
+
+#observatory to termina
+execute in termina positioned -915 35 -235 if entity @a[team=Leader, distance=..1.5] run fill -916 35 -235 -916 36 -235 air
+execute in termina positioned -915 35 -235 if entity @a[team=Leader, distance=..1.5] run setblock -916 35 -235 dark_oak_door[facing=east,hinge=right,open=false,half=lower] replace
+execute in termina positioned -915 35 -235 if entity @a[team=Leader, distance=..1.5] run setblock -916 36 -235 dark_oak_door[facing=east,hinge=right,open=false,half=upper] replace
+execute in termina positioned -915 35 -235 if entity @a[team=Leader, distance=..1.5] as @a run function mm:music/music_reset_self
+execute in termina positioned -915 35 -235 if entity @a[team=Leader, distance=..1.5] as @a run scoreboard players set @s Mu_Termina 0
+execute in termina positioned -915 35 -235 if entity @a[team=Leader, distance=..1.5] run tp @a[tag=!debug] -868 58 -317 270 0
+
+#termina to obersatory
+execute in termina positioned -870 59 -317 if entity @a[team=Leader, distance=..1.5] run fill -869 59 -317 -869 60 -317 air
+execute in termina positioned -870 59 -317 if entity @a[team=Leader, distance=..1.5] run setblock -869 59 -317 dark_oak_door[facing=west,hinge=right,open=false,half=lower] replace
+execute in termina positioned -870 59 -317 if entity @a[team=Leader, distance=..1.5] run setblock -869 60 -317 dark_oak_door[facing=west,hinge=right,open=false,half=upper] replace
+execute in termina positioned -870 59 -317 if entity @a[team=Leader, distance=..1.5] as @a run function mm:music/music_reset_self
+execute in termina positioned -870 59 -317 if entity @a[team=Leader, distance=..1.5] as @a run scoreboard players set @a Mu_Observatory 0
+execute in termina positioned -870 59 -317 if entity @a[team=Leader, distance=..1.5] run tp @a[tag=!debug] -917 35 -235 90 0
+
+
+
+execute in minecraft:termina positioned -868 61 -317 run playsound minecraft:mm.music.termina record @a[scores={Mu_Termina=0}] ~ ~ ~ 2 1 1
+scoreboard players add @a[scores={Mu_Termina=0..}] Mu_Termina 1
+scoreboard players set @a[scores={Mu_Termina=1280}] Mu_Termina 0
+
+#TODO: pack into separate update function UPDATE_SEWERS
+
+
+
+
+#moonstear
+execute in minecraft:termina as @e[type=armor_stand, tag=moontear] at @s run function mm:update/clocktown/moons_tear
+
+execute if score #Boolean Time_Runs matches 1.. run function mm:time/displaytime
+execute unless score #Boolean Time_Runs matches 1.. run title @a actionbar {"text":""}
+

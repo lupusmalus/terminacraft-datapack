@@ -19,7 +19,13 @@ execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_o
 execute as @a[scores={RClick_Item=1},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{keatonmask:1b}}}] at @s run function mm:items/masks/keaton
 execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{keatonmask:1b}}}] run scoreboard players reset @s RClick_Item
 
+execute as @a[scores={RClick_Item=1},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{bunnyhood:1b}}}] at @s run function mm:items/masks/bunny
+execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{bunnyhood:1b}}}] run scoreboard players reset @s RClick_Item
+
 execute as @a[scores={RClick_Item=1},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{shoot:1b}}}] at @s run function mm:player/shoot_bubble
 execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{shoot:1b}}}] run scoreboard players reset @s RClick_Item
+
+execute as @a[scores={RClick_Item=1},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{openchest:1b}}}] at @s run function mm:player/open_chest
+execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{openchest:1b}}}] run scoreboard players reset @s RClick_Item
 
 execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick"}}] run scoreboard players reset @s RClick_Item

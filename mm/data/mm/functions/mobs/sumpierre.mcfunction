@@ -1,0 +1,2 @@
+kill @e[tag=pierre]
+summon armor_stand ~ ~ ~ {NoGravity:1b,Invisible:1b,Tags:["pierre"],Pose:{LeftArm:[0f,0f,270f],RightArm:[0f,0f,90f]},Rotation:[225F,0F],HandItems:[{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:9000004}},{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:9000004}}],ArmorItems:[{},{},{},{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:9000003}}]}

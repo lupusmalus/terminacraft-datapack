@@ -1,26 +1,48 @@
-scoreboard players add #Global Ticks 1
+execute store result score #Global Ticks run time query daytime
 
 
 
-## Clock Animation stuff
-scoreboard players add #Ani_Clock_Min Ticks 1
-scoreboard players operation #Ani_Clock_Min Ticks %= #TIME_CONST A_C_MIN_PULSE
-execute if score #Ani_Clock_Min Ticks matches 49 run scoreboard players add #Ani_Clock_Min Frames 1
-execute if score #Ani_Clock_Min Ticks matches 49 if score #Ani_Clock_Min Frames matches 20 run scoreboard players set #Ani_Clock_Min Frames 0
 
-
-#TODO: might make a global sidebar
-scoreboard players add Hours Ticks 1
-execute if score Hours Ticks matches 999 run scoreboard players add Hours Clock 1
-scoreboard players operation Hours Ticks %= #TIME_CONST A_C_HOUR_PULSE
+scoreboard players operation Hours Clock = #Global Ticks
+scoreboard players operation Hours Clock /= #TIME_CONST A_C_HOUR_PULSE
+scoreboard players operation Hours Clock += #TIME_CONST SIX
 scoreboard players operation Hours Clock %= #TIME_CONST HOURS
 
-scoreboard players operation Minutes Clock = Hours Ticks
-scoreboard players operation Minutes Clock /= #TIME_CONST MINUTES
-execute if score Hours Ticks matches 993.. run scoreboard players set Minutes Clock 59
+scoreboard players operation #Minutes Frames = #Global Ticks
+scoreboard players operation #Minutes Frames %= #TIME_CONST THREE
+
+scoreboard players operation #ModuloFifty Clock = #Global Ticks
+scoreboard players operation #ModuloFifty Clock %= #TIME_CONST FIFTY
 
 
+scoreboard players operation #Segment Clock = #Global Ticks
+scoreboard players operation #Segment Clock %= #TIME_CONST A_C_HOUR_PULSE
+scoreboard players operation #Segment Clock /= #TIME_CONST FIFTY
 
+#TODO: fix clock sound
+
+
+execute if score #ModuloFifty Clock matches 0 run scoreboard players operation Minutes Clock = #Segment Clock
+execute if score #ModuloFifty Clock matches 0 run scoreboard players operation Minutes Clock *= #TIME_CONST THREE
+execute if score #ModuloFifty Clock matches 0 run scoreboard players add Minutes Clock 0
+
+
+execute if score #ModuloFifty Clock matches 16 run scoreboard players operation Minutes Clock = #Segment Clock
+execute if score #ModuloFifty Clock matches 16 run scoreboard players operation Minutes Clock *= #TIME_CONST THREE
+execute if score #ModuloFifty Clock matches 16 run scoreboard players add Minutes Clock 1
+
+
+execute if score #ModuloFifty Clock matches 32 run scoreboard players operation Minutes Clock = #Segment Clock
+execute if score #ModuloFifty Clock matches 32 run scoreboard players operation Minutes Clock *= #TIME_CONST THREE
+execute if score #ModuloFifty Clock matches 32 run scoreboard players add Minutes Clock 2
+
+
+scoreboard players operation #Ani_Clock_Min Frames = Minutes Clock
+scoreboard players operation #Ani_Clock_Min Frames /= #TIME_CONST THREE
+
+scoreboard players operation #Ani_Clock_Min Ticks = #Ani_Clock_MinMem Ticks
+scoreboard players operation #Ani_Clock_Min Ticks -= #Ani_Clock_Min Frames
+scoreboard players operation #Ani_Clock_MinMem Ticks = #Ani_Clock_Min Frames
 
 
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11500 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1
@@ -35,4 +57,4 @@ execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Tic
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23700 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23800 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23900 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
-execute if score #Global Ticks matches 24000 run function mm:time/newday
+execute if score #Global Ticks matches 0 run function mm:time/newday

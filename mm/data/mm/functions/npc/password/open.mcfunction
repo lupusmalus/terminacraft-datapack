@@ -1,4 +1,4 @@
-fill -781 61 -247 -781 64 -247 air
+fill -779 61 -247 -779 64 -247 air
 
 function mm:npc/password/movekid
 

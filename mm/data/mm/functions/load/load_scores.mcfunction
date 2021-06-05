@@ -8,6 +8,15 @@ scoreboard objectives add A_C_MIN_PULSE dummy
 scoreboard objectives add TEN dummy
 scoreboard objectives add TPS dummy
 scoreboard objectives add SIXTY dummy
+scoreboard objectives add FIFTY dummy
+
+scoreboard objectives add SIX dummy
+scoreboard objectives add SIXTEEN dummy
+scoreboard objectives add EIGHTTEEN dummy
+scoreboard objectives add THREE dummy
+
+
+
 
 #TODO: add entire function for npcs
 scoreboard objectives add CTGuardS dummy
@@ -29,6 +38,13 @@ scoreboard players set #TIME_CONST MINUTES 17
 scoreboard players set #TIME_CONST HOURS 24
 scoreboard players set #TIME_CONST TPS 20
 scoreboard players set #TIME_CONST SIXTY 60
+scoreboard players set #TIME_CONST SIX 6
+scoreboard players set #TIME_CONST SIXTEEN 16
+scoreboard players set #TIME_CONST EIGHTTEEN 18
+scoreboard players set #TIME_CONST FIFTY 50
+
+
+scoreboard players set #TIME_CONST THREE 3
 scoreboard players set #VAR_CONST TEN 10
 
 
@@ -146,6 +162,9 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add Mu_Storms dummy
     scoreboard objectives add Mu_Shop dummy
     scoreboard objectives add Mu_Fairy dummy
+    scoreboard objectives add Mu_Observatory dummy
+    scoreboard objectives add Mu_Termina dummy
+
 
 
     #HEARTS
@@ -171,6 +190,8 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add Deku_Launch dummy
     scoreboard objectives add Deku_Flying dummy
     scoreboard objectives add Sneak minecraft.custom:sneak_time
+    scoreboard objectives add Shift minecraft.custom:sneak_time
+
     scoreboard objectives add Raycasting dummy
 
 

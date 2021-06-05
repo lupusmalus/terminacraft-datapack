@@ -7,5 +7,9 @@ scoreboard players reset @s Mu_Clocktower
 scoreboard players reset @s Mu_Storms
 scoreboard players reset @s Mu_Shop
 scoreboard players reset @s Mu_Fairy
+scoreboard players reset @s Mu_Observatory
+scoreboard players reset @s Mu_Termina
+
+
 
 

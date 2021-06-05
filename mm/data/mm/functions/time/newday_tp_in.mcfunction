@@ -1,19 +1,13 @@
-scoreboard objectives setdisplay sidebar
 
 scoreboard players reset #Boolean Time_Runs
 scoreboard players reset #Boolean Cycle_Start
 
 #TODO: pack into big function
-scoreboard players set #Global Ticks 0
 scoreboard players set #Ani_Clock_Min Ticks 0
 scoreboard players set #Ani_Clock_Min Frames 0
 
-scoreboard players set Hours Ticks 0
-scoreboard players set Minutes Ticks 0
-scoreboard players set Minutes Clock 0
-scoreboard players set Hours Clock 6
-
 scoreboard players add #Boolean Day_tp 1
+title @a actionbar {"text":""}
 #TODO: fix invisibility of armor
 execute in minecraft:termina as @a at @s run effect give @s invisibility 100 10 true
 execute in minecraft:termina as @a at @s run effect give @s blindness 100 10 true

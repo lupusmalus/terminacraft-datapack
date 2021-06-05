@@ -1,0 +1,1 @@
+summon item ~ ~ ~ {NoGravity:0b,Silent:1b,Age:-32768,Tags:["platform1","dekuplayground"],Item:{id:"minecraft:emerald",Count:1b,tag:{display:{Name:'{"text":"Green Rupee","color":"white","italic":false}'},drop:1b}}}
