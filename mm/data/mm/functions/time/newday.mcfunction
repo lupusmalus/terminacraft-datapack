@@ -1,5 +1,5 @@
-execute in termina run time set 0000
-execute in overworld run time set 0000
+#execute in termina run time set 0000
+#execute in overworld run time set 0000
 
 scoreboard players add Days Clock 1
 scoreboard players set #Ani_Clock_Min Ticks 0

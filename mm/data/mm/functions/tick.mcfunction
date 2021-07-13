@@ -1,7 +1,7 @@
 #offline handler
 execute unless entity @a run scoreboard players set #Boolean No_Players 1
-execute in termina if score #Boolean No_Players matches 1.. run gamerule doDaylightCycle false
-execute in termina if entity @a if score #Boolean No_Players matches 1.. run gamerule doDaylightCycle true
+execute in termina if score #Boolean No_Players matches 1.. run function mm:time/stop_time
+execute in termina if entity @a if score #Boolean No_Players matches 1.. run function mm:time/continue_time
 execute if entity @a run scoreboard players reset #Boolean No_Players
 
 function mm:assignleader
@@ -20,9 +20,10 @@ execute unless entity @a[tag=In_Dialogue] run function mm:player/deku_flower
 execute unless entity @a[tag=In_Dialogue] as @e[tag=deku_bubble] at @s run function mm:player/deku_bubble
 
 # daylight cycle 
+execute in termina store result score #Global Ticks run time query daytime
 execute unless score #Boolean No_Players matches 1.. if score #Boolean Time_Runs matches 1.. unless score #Boolean Day_tp matches 0.. run function mm:time/advancetime
 execute unless score #Boolean No_Players matches 1.. if score #Boolean Day_tp matches 0.. run function mm:time/scene_day
-execute unless score #Boolean No_Players matches 1.. in minecraft:termina if score #Boolean Cycle_Start matches 1.. if score #Boolean Time_Runs matches 1.. run function mm:time/newday_tp_in
+#execute unless score #Boolean No_Players matches 1.. in minecraft:termina if score #Boolean Cycle_Start matches 1.. if score #Boolean Time_Runs matches 1.. unless score #Boolean Day_tp matches 1.. run function mm:time/newday_tp_in
 
 # update regions if a player is there
 execute unless score #Boolean No_Players matches 1.. run function mm:update/updateregions

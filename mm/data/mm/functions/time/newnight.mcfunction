@@ -1,8 +1,8 @@
-scoreboard players set #Global Ticks 12000
-scoreboard players set Hours Ticks 0
+#scoreboard players set #Global Ticks 12000
+#scoreboard players set Hours Ticks 0
 
-execute in termina run time set 12000
-execute in overworld run time set 12000
+#execute in termina run time set 12000
+#execute in overworld run time set 12000
 
 scoreboard players set #Ani_Clock_Min Ticks 0
 

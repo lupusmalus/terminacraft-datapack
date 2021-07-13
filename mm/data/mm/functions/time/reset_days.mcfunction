@@ -15,7 +15,7 @@ execute as @a run function mm:music/music_reset_self
 #TODO: pack into big function
 scoreboard players set #Ani_Clock_Min Ticks 0
 scoreboard players set #Ani_Clock_Min Frames 0
-scoreboard players set Days Clock 1
+scoreboard players set Days Clock 0
 
 execute in minecraft:termina run time set 0
 execute in minecraft:overworld run time set 0
