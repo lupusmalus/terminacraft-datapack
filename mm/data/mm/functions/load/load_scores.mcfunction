@@ -17,7 +17,6 @@ scoreboard objectives add THREE dummy
 
 
 
-
 #TODO: add entire function for npcs
 scoreboard objectives add CTGuardS dummy
 scoreboard objectives add CTGuardE dummy
@@ -30,6 +29,16 @@ scoreboard players set #EastGuard CTGuardE 0
 scoreboard players set #WestGuard CTGuardW 0
 
 scoreboard objectives add Bomber_Balloon dummy
+
+scoreboard objectives add Magic_Slot0 dummy
+scoreboard objectives add Magic_Slot1 dummy
+scoreboard objectives add Magic_Slot2 dummy
+scoreboard objectives add Magic_Slot3 dummy
+scoreboard objectives add Magic_Slot4 dummy
+scoreboard objectives add Magic_Slot5 dummy
+scoreboard objectives add Magic_Slot6 dummy
+scoreboard objectives add Magic_Slot7 dummy
+
 
 
 scoreboard players set #TIME_CONST A_C_MIN_PULSE 50

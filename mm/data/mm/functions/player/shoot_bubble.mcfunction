@@ -7,5 +7,5 @@ execute if score @s Magic matches 1.. run scoreboard players set @e[tag=deku_bub
 summon armor_stand ~ ~ ~ {NoGravity:1b,Small:1b,Invisible:1b,Tags:["deku_bubble_obj"],Pose:{RightArm:[0f,0f,0f]},HandItems:[{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:9000001}},{}]}
 #TODO pack magic removal into separate function
 execute if score @s Magic matches 1.. run xp add @s -1
-execute if score @s Magic matches 1.. run scoreboard players remove @s Magic 1
+execute if score @s Magic matches 1.. run scoreboard players remove @s Magic 4
 
