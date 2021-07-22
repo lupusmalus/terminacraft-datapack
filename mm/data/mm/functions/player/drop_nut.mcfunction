@@ -1,0 +1,3 @@
+execute at @s unless score @s Cool_Dropnut matches 1.. run playsound minecraft:mm.dekunut.drop master @a ~ ~ ~ 1 1
+execute at @s unless score @s Cool_Dropnut matches 1.. run summon armor_stand ~ ~ ~ {Pose:{RightArm:[0f,0f,0f]},Invulnerable:1b,Invisible:1b,Tags:["dropnut"],HandItems:[{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:8000005}},{}]}
+execute at @s unless score @s Cool_Dropnut matches 1.. run scoreboard players set @s Cool_Dropnut 15
