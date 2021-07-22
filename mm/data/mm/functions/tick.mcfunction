@@ -123,6 +123,5 @@ scoreboard players set @a[scores={Mu_Termina=1280}] Mu_Termina 0
 #moonstear
 execute in minecraft:termina as @e[type=armor_stand, tag=moontear] at @s run function mm:update/clocktown/moons_tear
 
-execute if score #Boolean Time_Runs matches 1.. run function mm:time/displaytime
-execute unless score #Boolean Time_Runs matches 1.. run title @a actionbar {"text":""}
-
+function mm:time/displaytime
+function mm:player/nut_burst

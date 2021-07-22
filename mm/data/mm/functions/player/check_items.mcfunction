@@ -5,6 +5,9 @@ execute as @a[scores={RClick_Item=1},nbt={SelectedItem:{id:"minecraft:carrot_on_
 execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ocarina:1b}}}] run scoreboard players reset @s RClick_Item
 #check for deku mask
 
+execute as @a[scores={RClick_Item=1},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{dropnut:1b}}}] at @s run function mm:player/drop_nut
+execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{dropnut:1b}}}] run scoreboard players reset @s RClick_Item
+
 execute as @a[scores={RClick_Item=1},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{dekumask:1b}}}] at @s run function mm:items/masks/deku_mask
 execute as @a[scores={RClick_Item=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{dekumask:1b}}}] run scoreboard players reset @s RClick_Item
 #check for deku mask

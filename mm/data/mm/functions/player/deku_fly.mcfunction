@@ -1,4 +1,5 @@
 scoreboard players set @s Deku_Flying 0
+tag @s add deku_flying
 scoreboard players set @s Deku_Launch 1
 effect give @s minecraft:levitation 1 10 true
 effect give @s minecraft:slow_falling 4 255 true

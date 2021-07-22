@@ -1,3 +1,5 @@
+execute if score @s Magic matches ..0 run scoreboard players set @s Magic 0
+
 scoreboard players set @s Magic_Slot0 0
 scoreboard players set @s Magic_Slot1 3
 scoreboard players set @s Magic_Slot2 3
@@ -23,4 +25,13 @@ execute if score @s Magic matches 39.. run scoreboard players set @s Magic_Slot6
 execute if score @s Magic matches 42.. run scoreboard players set @s Magic_Slot6 5
 execute if score @s Magic matches 45.. run scoreboard players set @s Magic_Slot7 7
 execute if score @s Magic matches 48.. run scoreboard players set @s Magic_Slot7 8
+
+execute unless score @s Magic matches 0.. run scoreboard players set @s Magic_Slot0 9
+execute unless score @s Magic matches 0.. run scoreboard players set @s Magic_Slot1 9
+execute unless score @s Magic matches 0.. run scoreboard players set @s Magic_Slot2 9
+execute unless score @s Magic matches 0.. run scoreboard players set @s Magic_Slot3 9
+execute unless score @s Magic matches 0.. run scoreboard players set @s Magic_Slot4 9
+execute unless score @s Magic matches 0.. run scoreboard players set @s Magic_Slot5 9
+execute unless score @s Magic matches 0.. run scoreboard players set @s Magic_Slot6 9
+execute unless score @s Magic matches 0.. run scoreboard players set @s Magic_Slot7 9
 

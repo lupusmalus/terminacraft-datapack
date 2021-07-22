@@ -39,6 +39,23 @@ scoreboard objectives add Magic_Slot5 dummy
 scoreboard objectives add Magic_Slot6 dummy
 scoreboard objectives add Magic_Slot7 dummy
 
+scoreboard objectives add Sun_Moon dummy
+
+scoreboard objectives add Clock_Slot0 dummy
+scoreboard objectives add Clock_Slot1 dummy
+scoreboard objectives add Clock_Slot2 dummy
+scoreboard objectives add Clock_Slot3 dummy
+
+
+scoreboard objectives add Rupee_Slot0 dummy
+scoreboard objectives add Rupee_Slot1 dummy
+
+
+
+
+scoreboard objectives add Cool_Dropnut dummy
+
+
 
 
 scoreboard players set #TIME_CONST A_C_MIN_PULSE 50
