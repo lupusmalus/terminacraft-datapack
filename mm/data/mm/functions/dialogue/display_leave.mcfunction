@@ -1,1 +1,1 @@
-tellraw @a {"text":"Leave\n","color":"green","clickEvent":{"action":"run_command","value":"/function mm:dialogue/click_leave"}}
+tellraw @s {"text":"Leave\n","color":"green","clickEvent":{"action":"run_command","value":"/function mm:dialogue/click_leave"}}

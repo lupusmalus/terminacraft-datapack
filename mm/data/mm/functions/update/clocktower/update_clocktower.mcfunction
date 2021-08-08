@@ -24,6 +24,7 @@ scoreboard players set @a[scores={Mu_Clocktower=1483}] Mu_Clocktower 0
 
 
 #tp to Clocktown
-execute in overworld positioned -156 15 -5 if entity @a[team=Leader, distance=..1.5] run function mm:time/continue_time
-execute in overworld positioned -156 15 -5 if entity @a[team=Leader, distance=..1.5] unless score #Boolean Cycle_Start matches 1.. in termina run tp @a[tag=!debug] -740 54 -274 facing -740 55 -295
-#execute in overworld positioned -156 15 -5 if entity @a[team=Leader, distance=..1.5] if score #Boolean Cycle_Start matches 1.. run function mm:time/newday_tp_in
+execute in overworld positioned -156 15 -5 if entity @a[distance=..1.5] as @p[distance=..1.5] run function mm:player/check_travel
+execute in overworld positioned -156 15 -5 if entity @a[tag=travel_ack, distance=..1.5] run function mm:update/clocktower/warp/clocktower_out
+
+

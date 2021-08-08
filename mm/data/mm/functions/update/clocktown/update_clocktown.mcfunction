@@ -2,9 +2,7 @@
 # MUSIC TODO: pack into function
 #TODO: replace all portals, or enable them for non op
 #TODO:: disaple the right clicking of flowers
-#TODO: dekububbles not available right away
 #TODO: keepinventory for non-ops
-#TODO: kokirisword unbreakable
 
 
 
@@ -59,38 +57,39 @@ scoreboard players set @a[scores={Mu_Clocktown3=0598}] Mu_Clocktown3 0
 scoreboard players set @a[scores={Mu_Storms=883}] Mu_Storms 0
 
 
+execute in termina run function mm:update/clocktown/balloons
 
 
 ############################ CLOCK
 #TODO: fix this
-execute in minecraft:termina if score #Boolean Time_Runs matches 1.. if score #Ani_Clock_Min Ticks matches -1 run playsound minecraft:mm.time.tick ambient @a -739 61 -277 2 1
+execute in minecraft:termina if score #Boolean Time_Runs matches 1.. if score #Ani_Clock_Min Ticks matches -1 run playsound minecraft:mm.time.tick ambient @a -739 61 -277 1 1
 execute if score #Ani_Clock_Min Ticks matches 0..5 run function mm:update/clocktown/animate_clocktower
 execute if score Hours Ticks matches 0..5 run function mm:update/clocktown/animate_clocktower_hours
 
 
 #tp to clocktower
-execute in termina positioned -739 55 -271 if entity @a[team=Leader, distance=..1.5] run function mm:time/stop_time
-execute in termina positioned -739 55 -271 if entity @a[team=Leader, distance=..1.5] in overworld run tp @a[tag=!debug] -155 13 3
+execute in termina positioned -739 55 -271 if entity @a[distance=..1.5] as @p[distance=..1.5] run function mm:player/check_travel
+execute in termina positioned -739 55 -271 if entity @a[tag=travel_ack, distance=..1.5] run function mm:update/clocktown/warp/clocktower_in
+
 
 
 #tp to trading post
-execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..1.5] run function mm:load/regions/clocktown/load_items
-execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..1.5] run function mm:load/regions/clocktown/load_pots
-execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..1.5] run fill -704 57 -285 -704 58 -285 air
-execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..1.5] run setblock -704 57 -285 spruce_door[facing=east,hinge=left,open=false,half=lower] replace
-execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..1.5] run setblock -704 58 -285 spruce_door[facing=east,hinge=left,open=false,half=upper] replace
-execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..1.5] as @a run function mm:music/music_reset_self
-execute in termina positioned -703 57 -285 if entity @a[team=Leader, distance=..1.5] run tp @a[tag=!debug] -479 15 -47 0 0
+execute in termina positioned -703 57 -285 if entity @a[distance=..1.5] as @a[distance=..1.5] run function mm:player/check_travel
+execute in termina positioned -703 57 -285 if entity @a[tag=travel_ack, distance=..1.5] run function mm:update/clocktown/warp/trading_post_in
 
 #tp to fairyfounatin
+execute in termina positioned -720 62 -241 if entity @a[distance=..2] as @a[distance=..2] run function mm:player/check_travel
+execute in termina positioned -720 62 -241 if entity @a[tag=travel_ack, distance=..2] run function mm:update/clocktown/warp/fairyfountain_in
 
-execute in termina positioned -720 62 -241 if entity @a[team=Leader, distance=..2] run tp @a[tag=!debug] -435 17 -112 0 0
-execute in termina run function mm:update/clocktown/balloons
 
 
-#Deku playground
+#tp to deku playground
 execute in termina positioned -725 59 -249 if entity @a[distance=..1] run playsound mm.action.hole master @a ~ ~ ~ 2 1
-execute in termina positioned -725 53 -249 if entity @a[distance=..2] run tp @a[tag=!debug] -624 18 -103 180 0
+execute in termina positioned -725 53 -249 if entity @a[distance=..2, team=Leader] run tp @a[tag=!debug] -624 18 -103 180 0
+execute in termina positioned -725 53 -249 as @a[distance=..2, tag=debug] run tp @s -624 18 -103 180 0
+
 
 #Sewers
-execute in termina positioned -788 58 -247 if entity @p[distance=..2] run tp @a[tag=!debug] -833 23 -247
+execute in termina positioned -788 58 -247 if entity @a[distance=..2] as @a[distance=..2] run function mm:player/check_travel
+execute in termina positioned -788 58 -247 if entity @a[tag=travel_ack, distance=..2] run function mm:update/clocktown/warp/hideout_in
+

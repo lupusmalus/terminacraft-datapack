@@ -7,4 +7,5 @@ execute at @a[team=Leader] run tp @s ~ ~ ~
 #execute if entity @a[team=Leader, tag=In_Dialogue] run function mm:lock/lock
 function mm:music/music_reset_self
 function mm:player/set_hearts
+tag @s remove In_Dialogue
 scoreboard players reset @s Offline

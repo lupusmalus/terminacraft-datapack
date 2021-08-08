@@ -1,5 +1,5 @@
 #start the adventure
-execute in minecraft:overworld positioned -35 67 -20 if entity @a[team=Leader, distance=..2] run tp @a[tag=!debug] -27 68 14
+execute in minecraft:overworld positioned -35 67 -20 run tp @p[distance=..2] -27 68 14
 
 
 # chase music, music plays while variable is initialized
@@ -23,7 +23,9 @@ execute in minecraft:overworld positioned -39 10 63 if entity @p[distance=..5,sc
 execute in minecraft:overworld positioned 18 0 66 run particle minecraft:dust 255 255 255 4 ~ ~-6 ~ 2 200 2 4 7 force
 
 #teleport to leap, also deactivates music
-execute in minecraft:overworld positioned -44 51 86 as @a if entity @p[distance=1..6] run function mm:update/lostwoods/lost_woods_leap
+execute in minecraft:overworld positioned -44 51 86 if entity @a[team=Leader,distance=1..6] as @a run function mm:update/lostwoods/lost_woods_leap
+execute in minecraft:overworld positioned -44 51 86 as @a[distance=1..6] run function mm:update/lostwoods/lost_woods_leap
+
 
 #TODO: find out where these particles are coming from
 function mm:update/lostwoods/mask_particles
@@ -31,12 +33,8 @@ function mm:update/lostwoods/mask_particles
 #doors in cave: maybe pack into function
 
 #BIGDOOR
-execute in minecraft:overworld positioned -39 10 88 if entity @a[team=Leader, distance=..1] unless block -39 8 86 redstone_block run setblock -39 8 88 air
-execute in minecraft:overworld positioned -39 10 88 if entity @a[team=Leader, distance=..1] unless block -39 8 86 redstone_block run playsound minecraft:mm.objects.door.stone.open master @a ~ ~ ~ 1 1
-execute in minecraft:overworld positioned -39 10 88 if entity @a[team=Leader, distance=..1] unless block -39 8 86 redstone_block run setblock -39 8 86 redstone_block
-execute in minecraft:overworld positioned -39 10 75 unless entity @p[distance=..15] unless block -39 8 88 redstone_block run setblock -39 8 86 air
-execute in minecraft:overworld positioned -39 10 75 unless entity @p[distance=..15] unless block -39 8 88 redstone_block run playsound minecraft:mm.objects.door.stone.close master @a ~ ~ ~ 1 1
-execute in minecraft:overworld positioned -39 10 75 unless entity @p[distance=..15] unless block -39 8 88 redstone_block run setblock -39 8 88 redstone_block 
+
+execute in minecraft:overworld positioned -39 10 75 unless entity @p[distance=..15] unless block -39 8 88 redstone_block run function mm:update/lostwoods/warps/close_big_door
 
 #SMALLDOOR
 execute positioned -67 10 106 if entity @p[distance=..0.5] unless block -63 8 104 redstone_block run setblock -73 8 105 air

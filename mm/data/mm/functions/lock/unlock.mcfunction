@@ -1,2 +1,1 @@
-tag @s remove headlock
-execute at @s as @e[tag=headlock,type=area_effect_cloud] if score @s OID = @p OID run kill @s
+execute at @s run fill ~-1 ~-1 ~-1 ~1 ~3 ~1 air replace orange_stained_glass
