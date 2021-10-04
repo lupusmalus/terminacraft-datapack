@@ -48,3 +48,4 @@ execute in termina run summon armor_stand -434 16 -92 {NoGravity:1b,Silent:1b,Sm
 execute in termina run summon armor_stand -434 16 -92 {NoGravity:1b,Silent:1b,Small:1b,Marker:1b,Invisible:1b, Tags:["fairyCT","fairyCT19"],ArmorItems:[{},{},{},{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:9000000}}]}
 execute in termina run summon armor_stand -434 16 -92 {NoGravity:1b,Silent:1b,Small:1b,Marker:1b,Invisible:1b, Tags:["fairyCT","fairyCT20"],ArmorItems:[{},{},{},{id:"minecraft:iron_nugget",Count:1b,tag:{CustomModelData:9000000}}]}
 
+tp @e[scores={GreatFairyO=1}] -434 28 -96

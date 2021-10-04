@@ -35,11 +35,6 @@ execute in termina positioned -435 17 -122 if entity @a[tag=travel_ack, distance
 
 
 #load great fairy
-execute in termina positioned -435 17 -103 if entity @e[team=Leader, distance=..2] unless score #Global Q_GFairyCT matches 1.. if score #Global Q_FairyCT matches 1.. run function mm:mobs/stray_fairy/kill
-execute in termina positioned -435 17 -103 if entity @e[team=Leader, distance=..2] unless score #Global Q_GFairyCT matches 1.. if score #Global Q_FairyCT matches 1.. run tellraw @a {"text": "<LOAD GREAT FAIRY"}
-execute in termina positioned -435 17 -103 if entity @e[team=Leader, distance=..2] unless score #Global Q_GFairyCT matches 1.. if score #Global Q_FairyCT matches 1.. run playsound mm.mobs.greatfairy master @a -435 17 -103 1 1 
-execute in termina positioned -435 17 -103 if entity @e[team=Leader, distance=..2] unless score #Global Q_GFairyCT matches 1.. if score #Global Q_FairyCT matches 1.. run scoreboard players set #Global Q_GFairyCT 1
-
-
+execute in termina positioned -435 17 -103 if entity @e[team=Leader, distance=..2] unless score #Global Q_GFairyCT matches 1.. if score #Global Q_FairyCT matches 1.. run execute as @e[team=Leader] run function mm:load/armor_stands/great_fairy
 
 

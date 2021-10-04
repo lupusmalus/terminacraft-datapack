@@ -1,1 +1,1 @@
-say confirmed
+say confirmedinio

@@ -3,8 +3,32 @@ execute as @a run tag @s remove a_assigned
 execute as @a at @s if entity @e[tag=chest, tag=closed, distance=..2] run tag @s add a_assigned
 execute as @a at @s if entity @e[tag=chest, tag=closed, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,openchest:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000003,abutton:1b,openchest:1b,display:{Name:'{"text":"Open","color":"white","italic":false}'}}
 
+
+
+#TODO: repack into separate function for signs
 execute as @a at @s if entity @e[tag=construct, distance=..2] run tag @s add a_assigned
 execute as @a at @s if entity @e[tag=construct, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,checkconstruct:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000004,abutton:1b,checkconstruct:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
+
+execute as @a at @s if entity @e[tag=sign_bank, distance=..2] run tag @s add a_assigned
+execute as @a at @s if entity @e[tag=sign_bank, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,checkbanksign:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000004,abutton:1b,checkbanksign:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
+
+
+execute as @a at @s if entity @e[tag=sign_chestgame, distance=..2] run tag @s add a_assigned
+execute as @a at @s if entity @e[tag=sign_chestgame, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,chestgamesign:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000004,abutton:1b,chestgamesign:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
+
+execute as @a at @s if entity @e[tag=sign_milkbar, distance=..2] run tag @s add a_assigned
+execute as @a at @s if entity @e[tag=sign_milkbar, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,milkbarsign:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000004,abutton:1b,milkbarsign:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
+
+execute as @a at @s if entity @e[tag=sign_stockpot, distance=..2] run tag @s add a_assigned
+execute as @a at @s if entity @e[tag=sign_stockpot, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,stockpotsign:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000004,abutton:1b,stockpotsign:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
+
+execute as @a at @s if entity @e[tag=sign_army, distance=..2] run tag @s add a_assigned
+execute as @a at @s if entity @e[tag=sign_army, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,armysign:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000004,abutton:1b,armysign:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
+
+execute as @a at @s if entity @e[tag=sign_indiegogo, distance=..2] run tag @s add a_assigned
+execute as @a at @s if entity @e[tag=sign_indiegogo, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,indiegogosign:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000004,abutton:1b,indiegogosign:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
+
+
 
 execute as @a at @s if entity @e[tag=door, distance=..1.5] run tag @s add a_assigned
 execute as @a at @s if entity @e[tag=door, distance=..1.5] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,opendoor:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000003,abutton:1b,opendoor:1b,display:{Name:'{"text":"Open","color":"white","italic":false}'}}

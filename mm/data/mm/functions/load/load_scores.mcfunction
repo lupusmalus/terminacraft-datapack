@@ -28,6 +28,16 @@ scoreboard players set #NorthGuard CTGuardN 0
 scoreboard players set #EastGuard CTGuardE 0
 scoreboard players set #WestGuard CTGuardW 0
 
+scoreboard objectives add Float_Mid dummy
+scoreboard objectives add Tingle dummy
+
+scoreboard players set #Tingle Float_Mid 1
+scoreboard players set #Tingle Tingle 1
+
+scoreboard objectives add GreatFairyO dummy
+scoreboard players set #GreatFairyO GreatFairyO 1
+
+
 scoreboard objectives add Bomber_Balloon dummy
 
 scoreboard objectives add Magic_Slot0 dummy
