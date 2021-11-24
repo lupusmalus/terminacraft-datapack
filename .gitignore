@@ -1,3 +1,5 @@
 #ignore winSCP scripts
 sync_datapack.txt
 sync_datapack.bat
+/.metals
+/.vscode
