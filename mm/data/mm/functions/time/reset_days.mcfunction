@@ -24,6 +24,9 @@ scoreboard players add #Boolean Cycle_Start 1
 #TODO: add function to reset all quests
 scoreboard players reset #Global Q_FairyCT
 scoreboard players reset #Global Q_GFairyCT
+
+kill @e[tag=skulltula]
+
 function mm:time/day_first
 
 

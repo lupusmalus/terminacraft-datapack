@@ -93,3 +93,15 @@ execute in termina positioned -725 53 -249 as @a[distance=..2, tag=debug] run tp
 execute in termina positioned -788 58 -247 if entity @a[distance=..2] as @a[distance=..2] run function mm:player/check_travel
 execute in termina positioned -788 58 -247 if entity @a[tag=travel_ack, distance=..2] run function mm:update/clocktown/warp/hideout_in
 
+
+#into stock pot main
+execute in termina positioned -762 57 -270 as @a[distance=..1] run function mm:player/check_travel
+execute in termina positioned -762 57 -270 as @a[tag=travel_ack, distance=..1] run function mm:update/clocktown/warp/stock_pot_main_in
+
+execute in termina positioned -759 62 -261 as @a[distance=..1] run function mm:player/check_travel
+execute in termina positioned -759 62 -261 as @a[tag=travel_ack, distance=..1] run function mm:update/clocktown/warp/stock_pot_top_in
+
+#into chest game
+execute in termina positioned -761 57 -289 as @a[distance=..1] run function mm:player/check_travel
+execute in termina positioned -761 57 -289 as @a[distance=..1] run function mm:update/clocktown/warp/chestgame_in
+

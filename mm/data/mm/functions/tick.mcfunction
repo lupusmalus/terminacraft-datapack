@@ -74,14 +74,18 @@ execute as @a[nbt={OnGround:0b}] if score @s OnGround matches 1.. run scoreboard
 
 
 #TODO: pack into separate update function UPDATE_SEWERS
+execute in termina positioned -831 22 -247 if entity @p[distance=..1.5,team=Leader] run kill @e[tag=skulltula]
 execute in termina positioned -831 22 -247 if entity @p[distance=..1.5,team=Leader] run tp @a[tag=!debug] -783 57 -247 270 0
 
-
 execute in termina positioned -907 21 -235 if entity @p[distance=..2, team=Leader] run scoreboard players set @a[tag=!debug] Mu_Observatory 0
+execute in termina positioned -907 21 -235 if entity @p[distance=..2, team=Leader] run kill @e[tag=skulltula]
 execute in termina positioned -907 21 -235 if entity @p[distance=..2, team=Leader] run tp @a[tag=!debug] -913 21 -235
 
+
 execute in termina positioned -909 21 -235 if entity @p[distance=..2, team=Leader] as @a[tag=!debug] run function mm:music/music_reset_self
+execute in termina positioned -909 21 -235 if entity @p[distance=..2, team=Leader] run function mm:test/skulltula
 execute in termina positioned -909 21 -235 if entity @p[distance=..2, team=Leader] run tp @a[tag=!debug] -905 21.5 -235
+
 
 execute as @e[tag=balloon] at @s if entity @e[tag=deku_bubble, distance=..1.2] run scoreboard players set @e[tag=deku_bubble, limit=1, sort=nearest] Raycasting 10000
 execute as @e[tag=balloon, tag=bomber] at @s if entity @e[tag=deku_bubble, distance=..1.2] run scoreboard players set #Global Bomber_Balloon 1
@@ -125,3 +129,28 @@ execute in minecraft:termina as @e[type=armor_stand, tag=moontear] at @s run fun
 
 function mm:time/displaytime
 function mm:player/nut_burst
+
+
+#TODO: separate function, also generalize for other mobs
+execute as @e[tag=skulltula] at @s in minecraft:termina run scoreboard players add @a[distance=..5] Mu_Enemy 0
+execute as @e[tag=skulltula] at @s in minecraft:termina run playsound minecraft:mm.music.enemy record @a[scores={Mu_Enemy=0}, distance=..5] ~ ~ ~ 0.3 1 1
+
+scoreboard players add @a[scores={Mu_Enemy=0..}] Mu_Enemy 1
+scoreboard players set @a[scores={Mu_Enemy=1190..}] Mu_Enemy 0
+
+execute as @a[scores={Mu_Enemy=0..}] unless entity @e[tag=skulltula] run scoreboard players add @s Mu_Enemy_CD 0
+execute as @a[scores={Mu_Enemy_CD=0..}] unless entity @e[tag=skulltula] run scoreboard players add @s Mu_Enemy_CD 1
+
+execute as @a if score @s Mu_Enemy_CD matches 40.. unless entity @e[tag=skulltula] as @s run stopsound @s
+execute as @a if score @s Mu_Enemy_CD matches 40.. unless entity @e[tag=skulltula] as @s run scoreboard players reset @s Mu_Enemy
+execute as @a if score @s Mu_Enemy_CD matches 40.. unless entity @e[tag=skulltula] as @s run scoreboard players reset @s Mu_Enemy_CD
+
+
+
+execute as @e[tag=skulltula] at @s in minecraft:termina run stopsound @a[scores={Mu_Enemy=0..}, distance=6..]
+execute as @e[tag=skulltula] at @s in minecraft:termina run scoreboard players reset @a[scores={Mu_Enemy=0..}, distance=6..] Mu_Enemy
+
+
+
+#close doors if player to close
+execute as @e[tag=door] at @s unless entity @p[distance=..1.5] run setblock ~ ~-1 ~ air destroy

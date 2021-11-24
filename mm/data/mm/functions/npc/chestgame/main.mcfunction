@@ -1,0 +1,3 @@
+execute as @p run function mm:dialogue/enter_dialogue
+execute as @p at @s run playsound mm.mobs.honey.laugh master @a ~ ~ ~ 1 1
+tellraw @p [{"text":"Oh, what a cute little customer! So, do you want to play? For you, it's only ","color":"white"},{"text":"10 Rupees","color":"#FFC0CB"},{"text":"."},{"text":"\n\nOK","color":"green","clickEvent":{"action":"run_command","value":"/function mm:npc/chestgame/accept"}},{"text":"\nNo thanks","color":"green","clickEvent":{"action":"run_command","value":"/function mm:npc/chestgame/decline"}}]

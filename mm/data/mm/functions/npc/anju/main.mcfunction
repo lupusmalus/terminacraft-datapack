@@ -1,0 +1,2 @@
+execute as @p run function mm:dialogue/clear_chat
+tellraw @p {"text":"Oh, what a cute quest. Do you have a reservation? Where's your mother?\nI'm sorry. We're totally booked with reservations. Please tell that to your mother."}

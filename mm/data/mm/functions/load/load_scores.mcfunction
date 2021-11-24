@@ -200,6 +200,16 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add Mu_Fairy dummy
     scoreboard objectives add Mu_Observatory dummy
     scoreboard objectives add Mu_Termina dummy
+    scoreboard objectives add Mu_Enemy dummy
+    scoreboard objectives add Mu_House dummy
+    scoreboard objectives add Mu_Minigame dummy
+   
+
+
+    scoreboard objectives add Mu_Enemy_CD dummy
+    scoreboard players set #CONSTANT Mu_Enemy_CD 40
+
+
 
 
 

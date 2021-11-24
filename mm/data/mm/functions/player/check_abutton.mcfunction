@@ -43,6 +43,11 @@ execute as @a[scores={Shift=1..},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,indieg
 
 
 
+#execute as @a[scores={Shift=1},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,attack:1b}}]}] as @s run function mm:plugin/dekuatt
+#execute as @a[scores={Shift=1..},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,attack:1b}}]}] run scoreboard players reset @s Shift
+
+
+
 
 
 

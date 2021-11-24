@@ -4,7 +4,6 @@ execute as @a at @s if entity @e[tag=chest, tag=closed, distance=..2] run tag @s
 execute as @a at @s if entity @e[tag=chest, tag=closed, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,openchest:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000003,abutton:1b,openchest:1b,display:{Name:'{"text":"Open","color":"white","italic":false}'}}
 
 
-
 #TODO: repack into separate function for signs
 execute as @a at @s if entity @e[tag=construct, distance=..2] run tag @s add a_assigned
 execute as @a at @s if entity @e[tag=construct, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,checkconstruct:1b}}]}] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000004,abutton:1b,checkconstruct:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
@@ -39,4 +38,5 @@ execute as @a[scores={Deku=1}] unless score @s Deku_Dive matches 0.. unless scor
 
 
 #execute as @a[tag=!debug] unless entity @s[tag=a_assigned] run replaceitem entity @s hotbar.1 air
-execute as @a[tag=!debug] unless entity @s[tag=a_assigned] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000002,abutton:1b,display:{Name:'{"text":"","color":"white","italic":false}'}}
+execute as @a[tag=!debug] unless entity @s[tag=a_assigned] unless entity @s[tag=in_game] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000006,abutton:1b,attack:1b,display:{Name:'{"text":"Attack","color":"white","italic":false}'}}
+execute as @a[tag=!debug] unless entity @s[tag=a_assigned] if entity @s[tag=in_game] run replaceitem entity @s hotbar.1 carrot_on_a_stick{CustomModelData:1000002,abutton:1b,attack:1b,display:{Name:'{"text":"","color":"white","italic":false}'}}
