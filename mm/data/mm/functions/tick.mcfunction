@@ -154,3 +154,6 @@ execute as @e[tag=skulltula] at @s in minecraft:termina run scoreboard players r
 
 #close doors if player to close
 execute as @e[tag=door] at @s unless entity @p[distance=..1.5] run setblock ~ ~-1 ~ air destroy
+
+# discoball
+execute as @e[tag=spin] at @s run tp @s ~ ~ ~ ~-1 ~
