@@ -22,7 +22,7 @@ execute in minecraft:termina run fill -759 168 -347 -719 179 -303 minecraft:air
 
 ######################### SOUTH CLOCKTOWN
 execute in minecraft:termina run fill -741 54 -297 -739 61 -295 minecraft:air
-execute in minecraft:termina run clone -741 25 -297 -739 28 -295 -741 54 -297 replace normal
+execute in minecraft:termina run clone -741 25 -297 -739 29 -295 -741 54 -297 replace normal
 execute in minecraft:termina run clone -751 28 -253 -737 42 -253 -747 62 -273 replace normal
 
 
