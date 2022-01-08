@@ -1,2 +1,2 @@
 effect clear @s
-effect give @s minecraft:slow_falling 5 255 true
+effect give @s minecraft:levitation 15 255 true

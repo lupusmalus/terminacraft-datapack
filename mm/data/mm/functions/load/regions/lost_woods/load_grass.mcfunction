@@ -37,3 +37,4 @@ execute in overworld run setblock -56 5 117 grass
 execute in overworld run setblock -58 5 118 grass
 execute in overworld run setblock -58 5 116 grass
 
+execute in overworld run summon armor_stand -39 11 88 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["door"]}

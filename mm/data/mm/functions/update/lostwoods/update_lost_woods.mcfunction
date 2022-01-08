@@ -33,7 +33,6 @@ function mm:update/lostwoods/mask_particles
 #doors in cave: maybe pack into function
 
 #BIGDOOR
-
 execute in minecraft:overworld positioned -39 10 75 unless entity @p[distance=..15] unless block -39 8 88 redstone_block run function mm:update/lostwoods/warps/close_big_door
 
 #SMALLDOOR

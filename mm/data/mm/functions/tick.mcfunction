@@ -72,6 +72,7 @@ execute as @a[nbt={OnGround:1b}] unless score @s OnGround matches 1.. run scoreb
 execute as @a[nbt={OnGround:0b}] if score @s OnGround matches 1.. run scoreboard players set @s OnGround 0
 
 
+execute as @a[nbt={HurtTime:9s}, scores={Deku_Flying=0..}] at @s run function mm:player/deku_air_hurt
 
 #TODO: pack into separate update function UPDATE_SEWERS
 execute in termina positioned -831 22 -247 if entity @p[distance=..1.5,team=Leader] run kill @e[tag=skulltula]

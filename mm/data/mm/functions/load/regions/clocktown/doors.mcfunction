@@ -33,3 +33,8 @@ execute in termina run summon armor_stand -364 19 -59 {NoGravity:1b,Invisible:1b
 # Chestgame in
 execute in termina run summon armor_stand -761 56 -288 {NoGravity:1b,Invisible:1b,Tags:["door","chestgame"]}
 
+
+#TODO: kill only those in region
+execute in overworld run summon armor_stand -39 11 89 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["door","lost_woods"]}
+
+
