@@ -24,18 +24,17 @@ scoreboard players set @a[scores={Mu_Fairy=976}] Mu_Fairy 0
 
 #tradingpost to clocktown
 execute in termina positioned -479 15 -50 if entity @a[distance=..1.5] as @a[distance=..1.5] run function mm:player/check_travel
-execute in termina positioned -479 15 -50 if entity @a[tag=travel_ack, distance=..1.5] run function mm:update/clocktown/warp/tradingpost_out
+execute in termina positioned -479 15 -50 as @a[tag=travel_ack, distance=..1.5] run function mm:update/clocktown/warp/tradingpost_out
 
 
 #fairies to clocktown
 execute in termina positioned -435 17 -122 if entity @a[distance=..4] as @a[distance=..4] run function mm:player/check_travel
-execute in termina positioned -435 17 -122 if entity @a[tag=travel_ack, distance=..4] run function mm:update/clocktown/warp/fairyfountain_out
+execute in termina positioned -435 17 -122 as @a[tag=travel_ack, distance=..4] run function mm:update/clocktown/warp/fairyfountain_out
 
 
 
 
-#load great fairy
-execute in termina positioned -435 17 -103 if entity @e[team=Leader, distance=..2] unless score #Global Q_GFairyCT matches 1.. if score #Global Q_FairyCT matches 1.. run execute as @e[team=Leader] run function mm:load/armor_stands/great_fairy
+execute in termina positioned -435 16 -100 if entity @e[team=Leader, distance=..2] unless score #Global Q_GFairyCT matches 1.. if score #Global Q_FairyCT matches 1.. run execute as @e[team=Leader,limit=1] run ex run great_fairy1
 
 
 #into stock pot main out

@@ -32,3 +32,10 @@ function mm:load/regions/clocktown/unlight_torches
 execute in termina unless score #Global Q_FairyCT matches 1.. run function mm:load/regions/clocktown/fairy
 
 function mm:load/load_regions
+
+
+
+#NPCS
+execute as @p run ex run DAY_FIRST
+execute as @p run function mm:dialogue/clear_chat
+

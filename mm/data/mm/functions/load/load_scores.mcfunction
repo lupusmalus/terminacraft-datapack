@@ -31,6 +31,10 @@ scoreboard players set #WestGuard CTGuardW 0
 scoreboard objectives add Float_Mid dummy
 scoreboard objectives add Tingle dummy
 
+scoreboard objectives add Rotate dummy
+scoreboard players set #CTFF_Rotator Rotate 1
+
+
 scoreboard players set #Tingle Float_Mid 1
 scoreboard players set #Tingle Tingle 1
 

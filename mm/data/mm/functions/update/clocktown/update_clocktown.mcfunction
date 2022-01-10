@@ -75,11 +75,11 @@ execute in termina positioned -739 55 -271 if entity @a[tag=travel_ack, distance
 
 #tp to trading post
 execute in termina positioned -703 57 -285 if entity @a[distance=..1.5] as @a[distance=..1.5] run function mm:player/check_travel
-execute in termina positioned -703 57 -285 if entity @a[tag=travel_ack, distance=..1.5] run function mm:update/clocktown/warp/trading_post_in
+execute in termina positioned -703 57 -285 if entity @a[distance=..1.5] as @a[tag=travel_ack] run function mm:update/clocktown/warp/trading_post_in
 
 #tp to fairyfounatin
 execute in termina positioned -720 62 -241 if entity @a[distance=..2] as @a[distance=..2] run function mm:player/check_travel
-execute in termina positioned -720 62 -241 if entity @a[tag=travel_ack, distance=..2] run function mm:update/clocktown/warp/fairyfountain_in
+execute in termina positioned -720 62 -241 if entity @a[distance=..2] as @a[tag=travel_ack] run function mm:update/clocktown/warp/fairyfountain_in
 
 
 

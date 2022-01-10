@@ -105,5 +105,9 @@ execute as @e[type=armor_stand, tag=rFairyCT20] at @s run tp @e[tag=fairyCT20,sc
 execute as @e[type=armor_stand, tag=rFairyCT20] at @s run tp @e[tag=fairyCT20,scores={Move=3}] ^ ^ ^3
 
 
+
+execute as @e[name=CTFF_Rotator] at @s run tp @e[name=CTfairyrotate, limit=1, sort=nearest] ^ ^-2 ^1
+execute as @e[name=CTFF_Rotator_shiny] at @s run particle minecraft:firework ^ ^ ^1 0 5 0 0 200 normal
+
 scoreboard players add @e[tag=fairyCT] Move 1
 scoreboard players set @e[tag=fairyCT, scores={Move=5.. }] Move 0
