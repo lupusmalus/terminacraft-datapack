@@ -105,3 +105,5 @@ execute in termina positioned -759 62 -261 as @a[tag=travel_ack, distance=..1] r
 execute in termina positioned -761 57 -289 as @a[distance=..1] run function mm:player/check_travel
 execute in termina positioned -761 57 -289 as @a[distance=..1] run function mm:update/clocktown/warp/chestgame_in
 
+execute as @p unless score #Global Bomber_Balloon matches 1.. unless score #Jim Animate matches 1.. run ex run jim_behavior npc:n@69
+execute as @p unless score #Bombers Animate matches 1 run ex run bomber_behavior

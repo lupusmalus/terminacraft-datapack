@@ -158,3 +158,11 @@ execute as @e[tag=door] at @s unless entity @p[distance=..1.5] run setblock ~ ~-
 
 # discoball
 execute as @e[tag=spin] at @s run tp @s ~ ~ ~ ~-1 ~
+
+
+
+
+# onGround:
+
+execute as @a if score @s OnGround matches 1.. run tag @s add onGround
+execute as @a unless score @s OnGround matches 1.. run tag @s remove onGround
