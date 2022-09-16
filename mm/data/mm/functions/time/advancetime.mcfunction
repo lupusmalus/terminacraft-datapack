@@ -51,10 +51,13 @@ scoreboard players operation #Ani_Clock_MinMem Ticks = #Ani_Clock_Min Frames
 
 execute if score #Global Ticks matches 18000.. if score Days Clock matches 3 run function mm:time/final_hours_bell
 execute if score #Global Ticks matches 18000 if score Days Clock matches 3 run scoreboard players add @a Mu_Final 0
+<<<<<<< HEAD
 execute if score #Global Ticks matches 18000 if score Days Clock matches 3 as @p run ex run carnival_fireworks
 
 
 
+=======
+>>>>>>> 871f09d1c712ac8218862f6ec3be74c020319a5e
 execute as @a at @s if score @s Mu_Final matches 0 run playsound mm.music.final_hours master @s
 scoreboard players add @a[scores={Mu_Final=0..}] Mu_Final 1
 scoreboard players set @a[scores={Mu_Final=2000}] Mu_Final 0
