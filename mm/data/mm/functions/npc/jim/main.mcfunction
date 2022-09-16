@@ -1,2 +1,2 @@
-execute unless score #Global Bomber_Balloon matches 1.. run tellraw @a {"text":"What do you want, guy? I'm busy practicing with my blowgun! Don't mess with me!"}
-execute if score #Global Bomber_Balloon matches 1.. run tellraw @a [{"text":"Did you just pop my balloon? Well kid, prepare to be sent to the "},{"text":"SHADOW REALM","color":"light_purple","clickEvent":{"action":"run_command","value":"/function mm:npc/bomber/start_search"}}]
+execute as @p unless score #Global Bomber_Balloon matches 1.. run ex run JIM_DEFAULT
+execute as @p if score #Global Bomber_Balloon matches 1.. run ex run JIM_BAL_POPPED

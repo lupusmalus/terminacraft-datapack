@@ -42,7 +42,7 @@ execute in termina positioned -370 14 -69 as @a[distance=..1] run function mm:pl
 execute in termina positioned -370 14 -69 as @a[tag=travel_ack, distance=..1] run function mm:update/clocktown/warp/stock_pot_main_out
 
 
-execute in termina positioned -366 18 -58 unless score Hours Clock matches 18.. run scoreboard players add @a[distance=..30] Mu_House 0
+execute in termina positioned -366 18 -58 unless score Hours Clock matches 18.. run scoreboard players add @a[distance=..30, gamemode=!spectator] Mu_House 0
 execute in termina run playsound minecraft:mm.music.house record @a[scores={Mu_House=0}] -366 18 -58 1.4 1 1
 #execute in termina positioned -720 62 -241 unless score #Global Q_GFairyCT matches 1.. unless entity @e[tag=rFairyCT] run function mm:mobs/stray_fairy/load
 scoreboard players add @a[scores={Mu_House=0..}] Mu_House 1
@@ -61,6 +61,7 @@ scoreboard players add @a[scores={Mu_Minigame=0..}] Mu_Minigame 1
 scoreboard players set @a[scores={Mu_Minigame=580}] Mu_Minigame 0
 
 
-
 execute in termina positioned -409 58 2 as @a[distance=..1] run function mm:player/check_travel
 execute in termina positioned -409 58 2 as @a[tag=travel_ack, distance=..1] run function mm:update/clocktown/warp/chestgame_out
+
+function mm:mobs/stray_fairy/move

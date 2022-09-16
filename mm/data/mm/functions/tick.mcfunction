@@ -13,7 +13,9 @@ execute unless entity @a[tag=In_Dialogue] run function mm:player/check_masks
 execute unless entity @a[tag=In_Dialogue] run function mm:player/check_items
 execute unless entity @a[tag=In_Dialogue] run function mm:player/check_abutton
 
+#DIALOGUE
 
+execute as @a[tag=display_dialogue] run function mm:dialogue/quickdisplay
 
 # check for dekufly and bubble blast
 execute unless entity @a[tag=In_Dialogue] run function mm:player/deku_flower
@@ -21,13 +23,14 @@ execute unless entity @a[tag=In_Dialogue] as @e[tag=deku_bubble] at @s run funct
 
 # daylight cycle 
 execute in termina store result score #Global Ticks run time query daytime
+
 execute unless score #Boolean No_Players matches 1.. if score #Boolean Time_Runs matches 1.. unless score #Boolean Day_tp matches 0.. run function mm:time/advancetime
 execute unless score #Boolean No_Players matches 1.. if score #Boolean Day_tp matches 0.. run function mm:time/scene_day
-#execute unless score #Boolean No_Players matches 1.. in minecraft:termina if score #Boolean Cycle_Start matches 1.. if score #Boolean Time_Runs matches 1.. unless score #Boolean Day_tp matches 1.. run function mm:time/newday_tp_in
+execute unless score #Boolean No_Players matches 1.. in minecraft:termina if score #Boolean Cycle_Start matches 1.. if score #Boolean Time_Runs matches 1.. unless score #Boolean Day_tp matches 1.. run function mm:time/newday_tp_in
 
 # update regions if a player is there
 execute unless score #Boolean No_Players matches 1.. run function mm:update/updateregions
-#execute unless score #Boolean No_Players matches 1.. run function mm:update/clock
+# execute unless score #Boolean No_Players matches 1.. run function mm:update/clock
 
 
 
@@ -53,13 +56,13 @@ function mm:tatl/update_tatl
 
 
 
-function mm:mobs/stray_fairy/move
+
 function mm:animate/float_big
 function mm:animate/float_mid
 
-execute as @e[type=minecraft:villager, tag=!marked] run tag @s add marked
-execute if entity @e[type=minecraft:villager, nbt={HurtTime:10s}] at @e[type=minecraft:villager, nbt={HurtTime:10s}] run playsound mm.mobs.bomber.caught master @a ~ ~ ~ 1 1
-execute as @e[type=minecraft:villager, nbt={HurtTime:10s}] run function mm:npc/bomber/hit
+# execute as @e[type=minecraft:villager, tag=!marked] run tag @s add marked
+# execute if entity @e[type=minecraft:villager, nbt={HurtTime:10s}] at @e[type=minecraft:villager, nbt={HurtTime:10s}] run playsound mm.mobs.bomber.caught master @a ~ ~ ~ 1 1
+# execute as @e[type=minecraft:villager, nbt={HurtTime:10s}] run function mm:npc/bomber/hit
 function mm:npc/guards/main
 
 #TODO: make these region dependent!!
@@ -67,7 +70,7 @@ function mm:npc/skullkid/ct_deku
 
 
 
-#TODO: pack into function
+# #TODO: pack into function
 execute as @a[nbt={OnGround:1b}] unless score @s OnGround matches 1.. run scoreboard players set @s OnGround 1 
 execute as @a[nbt={OnGround:0b}] if score @s OnGround matches 1.. run scoreboard players set @s OnGround 0
 
@@ -89,7 +92,7 @@ execute in termina positioned -909 21 -235 if entity @p[distance=..2, team=Leade
 
 
 execute as @e[tag=balloon] at @s if entity @e[tag=deku_bubble, distance=..1.2] run scoreboard players set @e[tag=deku_bubble, limit=1, sort=nearest] Raycasting 10000
-execute as @e[tag=balloon, tag=bomber] at @s if entity @e[tag=deku_bubble, distance=..1.2] run scoreboard players set #Global Bomber_Balloon 1
+execute as @e[tag=balloon, tag=bomber] at @s if entity @e[tag=deku_bubble, distance=..1.2] run function mm:npc/bomber/popballoon
 execute as @e[tag=balloon, tag=sewer] at @s if entity @e[tag=deku_bubble, distance=..1.2] run setblock -895 22 -235 air
 execute as @e[tag=balloon] at @s if entity @e[tag=deku_bubble, distance=..1.2] run kill @s
 
@@ -121,7 +124,6 @@ scoreboard players add @a[scores={Mu_Termina=0..}] Mu_Termina 1
 scoreboard players set @a[scores={Mu_Termina=1280}] Mu_Termina 0
 
 #TODO: pack into separate update function UPDATE_SEWERS
-
 
 
 
@@ -158,3 +160,16 @@ execute as @e[tag=door] at @s unless entity @p[distance=..1.5] run setblock ~ ~-
 
 # discoball
 execute as @e[tag=spin] at @s run tp @s ~ ~ ~ ~-1 ~
+
+
+
+
+# onGround:
+
+execute as @a if score @s OnGround matches 1.. run tag @s add onGround
+execute as @a unless score @s OnGround matches 1.. run tag @s remove onGround
+
+
+function mm:test/lookmask
+execute as @e[name=Mask,limit=1] at @s run tp @e[name=HMS_Spin,limit=1, sort=nearest] ^ ^-0.2 ^1
+execute as @e[tag=permanent, type=falling_block] at @s run data merge entity @s {Time:1}

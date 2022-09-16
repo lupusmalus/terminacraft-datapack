@@ -11,3 +11,5 @@ scoreboard players set @s Goron 0
 scoreboard players set @s Zora 0
 scoreboard players set @s Mask 1
 scoreboard players set @s Deku 1
+
+tag @s add Deku

@@ -12,6 +12,8 @@ scoreboard players reset @s Mu_Termina
 scoreboard players reset @s Mu_Enemy
 scoreboard players reset @s Mu_House
 scoreboard players reset @s Mu_Minigame
+scoreboard players reset @s Mu_Final
+
 
 
 

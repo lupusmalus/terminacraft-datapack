@@ -4,7 +4,6 @@
 
 
 
-
 scoreboard players operation Hours Clock = #Global Ticks
 scoreboard players operation Hours Clock /= #TIME_CONST A_C_HOUR_PULSE
 scoreboard players operation Hours Clock += #TIME_CONST SIX
@@ -50,6 +49,20 @@ scoreboard players operation #Ani_Clock_Min Ticks -= #Ani_Clock_Min Frames
 scoreboard players operation #Ani_Clock_MinMem Ticks = #Ani_Clock_Min Frames
 
 
+execute if score #Global Ticks matches 18000.. if score Days Clock matches 3 run function mm:time/final_hours_bell
+execute if score #Global Ticks matches 18000 if score Days Clock matches 3 run scoreboard players add @a Mu_Final 0
+execute if score #Global Ticks matches 18000 if score Days Clock matches 3 as @p run ex run carnival_fireworks
+
+
+
+execute as @a at @s if score @s Mu_Final matches 0 run playsound mm.music.final_hours master @s
+scoreboard players add @a[scores={Mu_Final=0..}] Mu_Final 1
+scoreboard players set @a[scores={Mu_Final=2000}] Mu_Final 0
+
+
+execute if score Days Clock matches 3 if score #Global Ticks matches 100.. run function mm:time/moon_rumble
+
+
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11500 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11600 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 11700 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
@@ -63,4 +76,7 @@ execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Tic
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23800 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
 execute as @a if score #Boolean Time_Runs matches 1.. at @s if score #Global Ticks matches 23900 run playsound minecraft:mm.time.bell ambient @s ~ ~ ~ 0.5 1 
 execute if score #Global Ticks matches 0 run function mm:time/newday
-time add 1
+
+#MODIFY THIS TO CHANGE TIME SPEED
+execute in termina run time add 1 
+

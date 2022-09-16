@@ -27,6 +27,8 @@ execute as @a at @s if entity @e[tag=sign_army, distance=..2] unless entity @s[n
 execute as @a at @s if entity @e[tag=sign_indiegogo, distance=..2] run tag @s add a_assigned
 execute as @a at @s if entity @e[tag=sign_indiegogo, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,indiegogosign:1b}}]}] run item replace entity @s hotbar.1 with carrot_on_a_stick{CustomModelData:1000004,abutton:1b,indiegogosign:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
 
+execute as @a at @s if entity @e[tag=sign_bombdraw, distance=..2] run tag @s add a_assigned
+execute as @a at @s if entity @e[tag=sign_bombdraw, distance=..2] unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,bombdrawsign:1b}}]}] run item replace entity @s hotbar.1 with carrot_on_a_stick{CustomModelData:1000004,abutton:1b,bombdrawsign:1b,display:{Name:'{"text":"Check","color":"white","italic":false}'}}
 
 
 execute as @a at @s if entity @e[tag=door, distance=..1.5] run tag @s add a_assigned
@@ -39,6 +41,9 @@ execute as @a at @s if entity @e[tag=door, distance=..1.5] unless entity @s[nbt=
 
 execute as @a[scores={Deku=1}] unless score @s Deku_Dive matches 0.. unless score @s Deku_Launch matches 0.. at @s if block ~ ~ ~ potted_poppy run tag @s add a_assigned
 execute as @a[scores={Deku=1}] unless score @s Deku_Dive matches 0.. unless score @s Deku_Launch matches 0.. at @s if block ~ ~ ~ potted_poppy unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,dekudive:1b}}]}] run item replace entity @s hotbar.1 with carrot_on_a_stick{CustomModelData:1000005,abutton:1b,dekudive:1b,display:{Name:'{"text":"Dive","color":"white","italic":false}'}}
+
+execute as @a[scores={Deku=1}] at @s if entity @e[tag=dekuplayground,tag=deku_flower, distance=..1] unless score @s Deku_Dive matches 0.. unless score @s Deku_Launch matches 0.. at @s run tag @s add a_assigned
+execute as @a[scores={Deku=1}] at @s if entity @e[tag=dekuplayground,tag=deku_flower, distance=..1] unless score @s Deku_Dive matches 0.. unless score @s Deku_Launch matches 0.. at @s unless entity @s[nbt={Inventory:[{Slot:1b,tag:{abutton:1b,dekudive:1b}}]}] run item replace entity @s hotbar.1 with carrot_on_a_stick{CustomModelData:1000005,abutton:1b,dekudive:1b,display:{Name:'{"text":"Dive","color":"white","italic":false}'}}
 
 
 execute as @a[scores={Deku=1}] unless score @s Deku_Dive matches 0.. unless score @s Deku_Launch matches 0.. at @s if block ~ ~ ~ potted_dandelion run tag @s add a_assigned

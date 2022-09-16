@@ -11,6 +11,7 @@ title @a actionbar {"text":""}
 #TODO: fix invisibility of armor
 execute in minecraft:termina as @a at @s run effect give @s invisibility 100 10 true
 execute in minecraft:termina as @a at @s run effect give @s blindness 100 10 true
+execute as @a run gamemode spectator
 execute in minecraft:termina as @a at @s store result score @s tpX run data get entity @s Pos[0]
 execute in minecraft:termina as @a at @s store result score @s tpY run data get entity @s Pos[1]
 execute in minecraft:termina as @a at @s store result score @s tpZ run data get entity @s Pos[2]

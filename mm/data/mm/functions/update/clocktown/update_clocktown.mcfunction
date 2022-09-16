@@ -62,7 +62,7 @@ execute in termina run function mm:update/clocktown/balloons
 
 ############################ CLOCK
 #TODO: fix this
-execute in minecraft:termina if score #Boolean Time_Runs matches 1.. if score #Ani_Clock_Min Ticks matches -1 run playsound minecraft:mm.time.tick ambient @a -739 61 -277 1 1
+execute in minecraft:termina if score #Boolean Time_Runs matches 1.. if score #Ani_Clock_Min Ticks matches -1 run playsound minecraft:mm.time.tick ambient @a[gamemode=!spectator] -739 61 -277 1 1
 execute if score #Ani_Clock_Min Ticks matches 0..5 run function mm:update/clocktown/animate_clocktower
 execute if score Hours Ticks matches 0..5 run function mm:update/clocktown/animate_clocktower_hours
 
@@ -105,3 +105,5 @@ execute in termina positioned -759 62 -261 as @a[tag=travel_ack, distance=..1] r
 execute in termina positioned -761 57 -289 as @a[distance=..1] run function mm:player/check_travel
 execute in termina positioned -761 57 -289 as @a[distance=..1] run function mm:update/clocktown/warp/chestgame_in
 
+execute as @p unless score #Global Bomber_Balloon matches 1.. unless score #Jim Animate matches 1.. run ex run jim_behavior npc:n@69
+execute as @p unless score #Bombers Animate matches 1 run ex run bomber_behavior

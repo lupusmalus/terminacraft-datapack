@@ -6,9 +6,19 @@ scoreboard objectives add HOURS dummy
 scoreboard objectives add A_C_HOUR_PULSE dummy
 scoreboard objectives add A_C_MIN_PULSE dummy
 scoreboard objectives add TEN dummy
+scoreboard objectives add TWO_HUNDRED dummy
+scoreboard objectives add HUNDRED dummy
+
+
+
+scoreboard objectives add CONSTANT dummy
+
+
 scoreboard objectives add TPS dummy
 scoreboard objectives add SIXTY dummy
 scoreboard objectives add FIFTY dummy
+scoreboard objectives add FIVE dummy
+
 
 scoreboard objectives add SIX dummy
 scoreboard objectives add SIXTEEN dummy
@@ -41,6 +51,7 @@ scoreboard players set #Tingle Tingle 1
 scoreboard objectives add GreatFairyO dummy
 scoreboard players set #GreatFairyO GreatFairyO 1
 
+scoreboard players set #MOON_RUMBLE CONSTANT 1150
 
 scoreboard objectives add Bomber_Balloon dummy
 
@@ -60,6 +71,13 @@ scoreboard objectives add Clock_Slot1 dummy
 scoreboard objectives add Clock_Slot2 dummy
 scoreboard objectives add Clock_Slot3 dummy
 
+
+scoreboard objectives add Countdown_Slot0 dummy
+scoreboard objectives add Countdown_Slot1 dummy
+scoreboard objectives add Countdown_Slot2 dummy
+scoreboard objectives add Countdown_Slot3 dummy
+scoreboard objectives add Countdown_Slot4 dummy
+scoreboard objectives add Countdown_Slot5 dummy
 
 scoreboard objectives add Rupee_Slot0 dummy
 scoreboard objectives add Rupee_Slot1 dummy
@@ -83,9 +101,17 @@ scoreboard players set #TIME_CONST SIXTEEN 16
 scoreboard players set #TIME_CONST EIGHTTEEN 18
 scoreboard players set #TIME_CONST FIFTY 50
 
+scoreboard players set #TIME_CONST FIVE 5
+
+
 
 scoreboard players set #TIME_CONST THREE 3
+
 scoreboard players set #VAR_CONST TEN 10
+scoreboard players set #VAR_CONST TWO_HUNDRED 200
+scoreboard players set #VAR_CONST HUNDRED 100
+
+
 
 
 
@@ -129,13 +155,9 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add Bomber_Code5 dummy
 
 
-    #TODO: unhardcode this: make random for every game
-    scoreboard players set #Global Bomber_Code1 4
-    scoreboard players set #Global Bomber_Code2 1
-    scoreboard players set #Global Bomber_Code3 2
-    scoreboard players set #Global Bomber_Code4 5
-    scoreboard players set #Global Bomber_Code5 3
+    scoreboard players set #Bombers Animate 0
 
+    #TODO: unhardcode this: make random for every game
 
     scoreboard players set Hours Clock 0
     scoreboard players set Minutes Clock 0
@@ -207,6 +229,8 @@ scoreboard players set #VAR_CONST TEN 10
     scoreboard objectives add Mu_Enemy dummy
     scoreboard objectives add Mu_House dummy
     scoreboard objectives add Mu_Minigame dummy
+    scoreboard objectives add Mu_Final dummy
+
    
 
 

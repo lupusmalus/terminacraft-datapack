@@ -111,3 +111,5 @@ execute as @e[name=CTFF_Rotator_shiny] at @s run particle minecraft:firework ^ ^
 
 scoreboard players add @e[tag=fairyCT] Move 1
 scoreboard players set @e[tag=fairyCT, scores={Move=5.. }] Move 0
+
+

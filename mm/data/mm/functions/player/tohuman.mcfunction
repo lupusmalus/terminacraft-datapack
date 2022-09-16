@@ -9,3 +9,5 @@ scoreboard players set @s Deku 0
 scoreboard players set @s Goron 0
 scoreboard players set @s Zora 0
 scoreboard players set @s Mask 0
+
+tag @s remove Deku

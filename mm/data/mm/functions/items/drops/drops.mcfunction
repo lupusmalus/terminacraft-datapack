@@ -1,5 +1,5 @@
 ### removes any items dropped that should not be dropped
-execute in minecraft:termina run kill @e[type=item, nbt=!{Item:{tag:{drop:1b}}}]
+# execute in minecraft:termina run kill @e[type=item, nbt=!{Item:{tag:{drop:1b}}}]
 #TODO: kill arrows and magic if not equipped
 
 

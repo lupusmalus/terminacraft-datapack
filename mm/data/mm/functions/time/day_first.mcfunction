@@ -25,6 +25,9 @@ execute in minecraft:termina run fill -741 54 -297 -739 61 -295 minecraft:air
 execute in minecraft:termina run clone -741 25 -297 -739 29 -295 -741 54 -297 replace normal
 execute in minecraft:termina run clone -751 28 -253 -737 42 -253 -747 62 -273 replace normal
 
+execute in minecraft:termina run fill -746 57 -302 -735 57 -291 minecraft:air
+execute in minecraft:termina run clone -746 28 -302 -735 28 -291 -746 57 -302 replace normal
+
 
 #clocktown torches
 function mm:load/regions/clocktown/unlight_torches
@@ -37,5 +40,6 @@ function mm:load/load_regions
 
 #NPCS
 execute as @p run ex run DAY_FIRST
+function mm:load/regions/clocktown/npcs_d1
 execute as @p run function mm:dialogue/clear_chat
 

@@ -44,6 +44,9 @@ execute as @a[scores={Shift=1},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,indiegog
 execute as @a[scores={Shift=1},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,indiegogosign:1b}}]}] at @s run tellraw @p [{"text":"The Indigo-Go's","color":"blue"},{"text":", the Zora band that's revived the deep-sea\nsound with its famous song, will be playing at the Carnival of \nTime!!!","color":"white"}]
 execute as @a[scores={Shift=1..},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,indiegogosign:1b}}]}] run scoreboard players reset @s Shift
 
+execute as @a[scores={Shift=1},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,bombdrawsign:1b}}]}] at @s run function mm:dialogue/clear_chat
+execute as @a[scores={Shift=1},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,bombdrawsign:1b}}]}] at @s run tellraw @p [{"text":"Planned Moon Trip\nExperiment Memo:\nTry using bomb-powered flight"}]
+execute as @a[scores={Shift=1..},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,bombdrawsign:1b}}]}] run scoreboard players reset @s Shift
 
 
 #execute as @a[scores={Shift=1},nbt={Inventory:[{Slot:1b,tag:{abutton:1b,attack:1b}}]}] as @s run function mm:plugin/dekuatt

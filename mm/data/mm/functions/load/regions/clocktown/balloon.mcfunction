@@ -8,3 +8,4 @@ execute in termina run tp @e[scores={Tingle=1}] -745 67 -236 250 30
 scoreboard players set #Tingle Float_Mid 1
 
 scoreboard players reset #Global Bomber_Balloon
+scoreboard players reset #Jim Animate
