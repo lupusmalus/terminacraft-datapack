@@ -1,0 +1,1 @@
+ex look <npc[145]> <npc[104].location.relative[0,2,0]>
